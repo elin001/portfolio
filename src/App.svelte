@@ -3,8 +3,8 @@
 </script>
 
 <main id="content">
-  <h1>Ellie Lin</h1>
-  <h3 style="font:style: italic">Visual journalist</h3>
+  <h1 class="hed">Ellie Lin</h1>
+  <h3 style="font-style: italic">Visual journalist</h3>
 
   <div class="about">
     <p>
@@ -180,21 +180,3 @@
     </div>
   </div>
 </main>
-
-<style>
-  /* .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  } */
-</style>

@@ -1,0 +1,98 @@
+name: Update portfolio data from Google Sheets
+
+on:
+  repository_dispatch:
+    types:
+      - sheet_update
+
+  workflow_dispatch:
+    inputs:
+      target_ref:
+        description: "Branch to write JSON to"
+        required: true
+        default: "svelte-transfer"
+      sheet:
+        description: "Sheet/tab name to export"
+        required: true
+        default: "Projects"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portfolio-data-update-${{ github.event.client_payload.target_ref || inputs.target_ref || 'default' }}
+  cancel-in-progress: false
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Resolve inputs
+        id: vars
+        shell: bash
+        run: |
+          TARGET_REF="${{ github.event.client_payload.target_ref }}"
+          SHEET_NAME="${{ github.event.client_payload.sheet }}"
+
+          if [ -z "$TARGET_REF" ]; then TARGET_REF="${{ inputs.target_ref }}"; fi
+          if [ -z "$SHEET_NAME" ]; then SHEET_NAME="${{ inputs.sheet }}"; fi
+
+          if [ -z "$TARGET_REF" ]; then TARGET_REF="svelte-transfer"; fi
+          if [ -z "$SHEET_NAME" ]; then SHEET_NAME="Projects"; fi
+
+          echo "target_ref=$TARGET_REF" >> "$GITHUB_OUTPUT"
+          echo "sheet=$SHEET_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout target branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.vars.outputs.target_ref }}
+          fetch-depth: 0
+
+      - name: Fetch JSON from Apps Script endpoint
+        env:
+          SHEET_ENDPOINT: ${{ secrets.SHEET_ENDPOINT }}
+          SHEET_TOKEN: ${{ secrets.SHEET_TOKEN }}
+        shell: bash
+        run: |
+          if [ -z "$SHEET_ENDPOINT" ]; then
+            echo "Missing SHEET_ENDPOINT secret."
+            exit 1
+          fi
+
+          mkdir -p data
+
+          if [ -n "$SHEET_TOKEN" ]; then
+            URL="${SHEET_ENDPOINT}?token=${SHEET_TOKEN}&sheet=${{ steps.vars.outputs.sheet }}"
+          else
+            URL="${SHEET_ENDPOINT}?sheet=${{ steps.vars.outputs.sheet }}"
+          fi
+
+          echo "Fetching Apps Script JSON (params hidden)"
+          curl -fsSL -L "$URL" -o data/portfolio.json
+
+      - name: Validate JSON
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          with open("data/portfolio.json", "r", encoding="utf-8") as f:
+              json.load(f)
+          print("JSON valid: data/portfolio.json")
+          PY
+
+      - name: Commit and push if changed
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git add data/portfolio.json
+          git commit -m "chore: update portfolio data from Sheets"
+          git push origin HEAD:${{ steps.vars.outputs.target_ref }}

@@ -75,20 +75,23 @@ jobs:
       - name: Debug fetched file vs remote
         shell: bash
         run: |
-          echo "Runner fetched file info:"
+          echo "=== Runner fetched file info ==="
           wc -c data/portfolio.json || true
+          echo "----- head of fetched file -----"
           head -n 20 data/portfolio.json || true
-      
-          echo "Remote file (if exists) info:"
+          echo
+
+          echo "=== Remote file info (if exists) ==="
           if git show origin/${{ steps.vars.outputs.target_ref }}:data/portfolio.json > /tmp/remote.json 2>/dev/null; then
             wc -c /tmp/remote.json || true
+            echo "----- head of remote file -----"
             head -n 20 /tmp/remote.json || true
-            echo "Diff (remote vs runner):"
+            echo
+            echo "----- diff (remote vs runner) -----"
             diff -u /tmp/remote.json data/portfolio.json || true
           else
             echo "No remote file at data/portfolio.json"
           fi
-
 
       - name: Validate JSON
         shell: bash

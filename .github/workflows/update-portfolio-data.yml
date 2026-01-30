@@ -53,7 +53,7 @@ jobs:
       - name: Fetch JSON from Apps Script endpoint
         env:
           SHEET_ENDPOINT: ${{ secrets.SHEET_ENDPOINT }}
-          SHEET_TOKEN: ${{ secrets.SHEET_TOKEN }}
+          PUBLIC_TOKEN: ${{ secrets.PUBLIC_TOKEN }}
         shell: bash
         run: |
           if [ -z "$SHEET_ENDPOINT" ]; then
@@ -63,8 +63,8 @@ jobs:
 
           mkdir -p data
 
-          if [ -n "$SHEET_TOKEN" ]; then
-            URL="${SHEET_ENDPOINT}?token=${SHEET_TOKEN}&sheet=${{ steps.vars.outputs.sheet }}"
+          if [ -n "$PUBLIC_TOKEN" ]; then
+            URL="${SHEET_ENDPOINT}?token=${PUBLIC_TOKEN}&sheet=${{ steps.vars.outputs.sheet }}"
           else
             URL="${SHEET_ENDPOINT}?sheet=${{ steps.vars.outputs.sheet }}"
           fi

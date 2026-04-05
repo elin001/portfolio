@@ -12,5 +12,8 @@
     "@sveltejs/vite-plugin-svelte": "^5.1.0",
     "svelte": "^5.35.2",
     "vite": "^7.0.3"
+  },
+  "dependencies": {
+    "d3-array": "^3.2.4"
   }
 }

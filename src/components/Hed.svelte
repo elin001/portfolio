@@ -1,13 +1,22 @@
 <script>
-  let { offTheClock, isMobile } = $props();
+  import { cubicInOut } from "svelte/easing";
+  import { fade } from "svelte/transition";
+  let { isDesktop } = $props();
 </script>
 
-{#if isMobile}
-  <h1>Ellie Lin</h1>
-{:else}
-  <h1>
-    Hi, I’m <span class="emphasis">Ellie Lin,</span>
-    <br />visual journalist
+<div class="hed-wrapper">
+  <h1 transition:fade={{ delay: 150, duration: 600, easing: cubicInOut }}>
+    {#if !isDesktop}
+      Ellie Lin
+    {:else}
+      Hi, I'm <span class="emphasis">Ellie Lin</span>,
+      <br /> visual journalist
+    {/if}
   </h1>
-{/if}
- 
+</div>
+
+<style>
+  .hed-wrapper {
+    margin: 15rem 0 1rem;
+  }
+</style>

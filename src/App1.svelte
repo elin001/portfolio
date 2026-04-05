@@ -1,6 +1,6 @@
 <script>
   import { groups } from "d3-array";
-  import data from "./data/portfolio.json";
+  import data from "../data/portfolio.json";
 
   import Hed from "./components/Hed.svelte";
   import Entry from "./components/Entry.svelte";

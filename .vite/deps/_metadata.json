@@ -1,0 +1,15 @@
+{
+  "hash": "d53255d4",
+  "configHash": "8ca27851",
+  "lockfileHash": "94befc68",
+  "browserHash": "6142be0e",
+  "optimized": {
+    "svelte": {
+      "src": "../../node_modules/svelte/src/index-client.js",
+      "file": "svelte.js",
+      "fileHash": "61805f6a",
+      "needsInterop": false
+    }
+  },
+  "chunks": {}
+}

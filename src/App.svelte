@@ -70,7 +70,7 @@
           class={[
             "sticky top-[40vh] font-sans-extralight text-3xl tracking-[0.08em] leading-snug transition-colors duration-300 pt-4 text-right",
             "max-md:top-0 max-md:text-center max-md:bg-[rgba(255,253,255,0.92)] max-md:w-full max-md:px-3 max-md:py-1.5 max-md:mx-auto max-md:mb-2 max-md:z-10",
-            activeTag === tag ? "text-ink" : "text-accent",
+            activeTag === tag ? "text-accent" : "text-ink",
           ]}
         >
           {tag}

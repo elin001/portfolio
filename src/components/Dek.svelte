@@ -16,7 +16,7 @@
   $effect(() => {
     const interval = setInterval(() => {
       currentIndex = (currentIndex + 1) % activities.length;
-    }, 15000);
+    }, 10000);
     return () => clearInterval(interval);
   });
 

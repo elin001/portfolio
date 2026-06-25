@@ -10,7 +10,7 @@
     <FeaturedImage img={article.img} />
   {/if}
   <h2
-    class="text-ink font-sans-semibold text-[3.125rem] font-semibold leading-[1.2] text-left m-0 mb-4 text-balance max-md:text-[2rem] max-md:tracking-[-0.36px] max-md:mb-[0.2rem]"
+    class="text-ink font-sans-semibold text-[3.125rem] font-semibold leading-[1.2] text-balance text-left m-0 mb-4 max-md:text-[2rem] max-md:tracking-[-0.36px] max-md:mb-[0.2rem]"
   >
     <a href={article.link} target="_blank">{article.headline}</a>
   </h2>

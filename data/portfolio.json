@@ -7,7 +7,7 @@
     "date": "June 2026",
     "link": "https://www.startribune.com/vance-boelters-43-hours-on-the-run-expose-mistakes-in-law-enforcement-response/601546404?utm_source=gift",
     "publication": "The Minnesota Star Tribune",
-    "img": null,
+    "img": "https://raw.githubusercontent.com/elin001/portfolio/29417b496e8ac2ee12d9dc26db8a962a3e7d366b/public/img/boelter.png",
     "alt": null,
     "tools": "Svelte, Premiere",
     "tags": "graphics & data"

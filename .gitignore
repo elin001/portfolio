@@ -20,5 +20,7 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
-fonts/
+src/fonts/
 .claude/
+*.vite/
+deps/

@@ -20,77 +20,77 @@
 @font-face {
   font-display: swap;
   font-family: "General Sans Bold";
-  src: url("./fonts/GeneralSans-Bold.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-Bold.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Sans Bold Italic";
-  src: url("./fonts/GeneralSans-BoldItalic.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-BoldItalic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Extralight";
-  src: url("./fonts/GeneralSans-Extralight.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-Extralight.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Extralight Italic";
-  src: url("./fonts/GeneralSans-ExtralightItalic.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-ExtralightItalic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Italic";
-  src: url("./fonts/GeneralSans-Italic.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-Italic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Medium";
-  src: url("./fonts/GeneralSans-Medium.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-Medium.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Medium Italic";
-  src: url("./fonts/GeneralSans-MediumItalic.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-MediumItalic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Sans Regular";
-  src: url("./fonts/GeneralSans-Regular.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-Regular.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Sans Semibold";
-  src: url("./fonts/GeneralSans-Semibold.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-Semibold.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Sans Semibold Italic";
-  src: url("./fonts/GeneralSans-SemiboldItalic.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-SemiboldItalic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Sans Variable";
-  src: url("./fonts/GeneralSans-Variable.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-Variable.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "General Sans Variable Italic";
-  src: url("./fonts/GeneralSans-VariableItalic.woff2") format("woff2");
+  src: url("/fonts/GeneralSans-VariableItalic.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "DM Sans Bold";
-  src: url("./fonts/DMSans-Bold.woff2") format("woff2");
+  src: url("/fonts/DMSans-Bold.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "DM Sans Light";
-  src: url("./fonts/DMSans-Light.woff2") format("woff2");
+  src: url("/fonts/DMSans-Light.woff2") format("woff2");
 }
 @font-face {
   font-display: swap;
   font-family: "DM Sans Regular";
-  src: url("./fonts/DMSans-Regular.woff2") format("woff2");
+  src: url("/fonts/DMSans-Regular.woff2") format("woff2");
 }
 
 /* ─── Base resets ──────────────────────────────────────────────────────────── */

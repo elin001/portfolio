@@ -15,24 +15,24 @@
     <a href={article.link} target="_blank">{article.headline}</a>
   </h2>
   <p
-    class="text-ink font-sans-medium text-2xl font-medium tracking-[-0.01em] leading-[1.3] text-left max-md:text-[1.25rem]"
+    class="text-ink font-sans-medium text-3xl font-medium tracking-[-0.01em] leading-[1.3] text-left max-md:text-[1.25rem]"
   >
     {article.publication}
     {#if isMobile}
       <br />
       <span
-        class="font-sans-extralight text-2xl font-extralight tracking-[-0.01em] max-md:text-[1.25rem]"
+        class="font-sans-extralight text-3xl font-extralight tracking-[-0.01em] max-md:text-[1.25rem]"
         >{article.date}</span
       >
     {:else}
       <span
-        class="font-sans-extralight text-2xl font-extralight tracking-[-0.01em]"
+        class="font-sans-extralight text-3xl font-extralight tracking-[-0.01em]"
       >
         | {article.date}</span
       >
     {/if}
   </p>
   {#if article.dek}
-    <p class="font-sans text-[1.15rem] leading-6 text-pretty">{article.dek}</p>
+    <p class="font-sans text-[1.15rem] leading-6 text-pretty pt-1">{article.dek}</p>
   {/if}
 </div>

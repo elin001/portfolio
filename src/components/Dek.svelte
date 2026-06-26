@@ -1,5 +1,5 @@
 <script>
-  import { fly } from 'svelte/transition';
+  import { fly, fade } from 'svelte/transition';
   import { cubicOut, cubicIn } from 'svelte/easing';
 
   let { isMobile } = $props();
@@ -16,7 +16,7 @@
   $effect(() => {
     const interval = setInterval(() => {
       currentIndex = (currentIndex + 1) % activities.length;
-    }, 10000);
+    }, 5000);
     return () => clearInterval(interval);
   });
 
@@ -56,23 +56,22 @@
     need it.
   {:else}
     I'm a news designer at The Minnesota Star Tribune during the day. Off the clock, I
-    <span class="inline-grid overflow-hidden">
+    <span class="inline-grid" style="min-width: max-content; overflow: visible">
       {#key currentIndex}
-        {#if activities[currentIndex].url}
-          <a
-            href={activities[currentIndex].url}
-            style="grid-area: 1/1"
-            class="text-inherit no-underline hover:text-accent transition-colors"
-            in:fly={{ y: 20, duration: 350, easing: cubicOut }}
-            out:fly={{ y: -20, duration: 350, easing: cubicIn }}
-          >{activities[currentIndex].phrase}</a>
-        {:else}
-          <span
-            style="grid-area: 1/1"
-            in:fly={{ y: 20, duration: 350, easing: cubicOut }}
-            out:fly={{ y: -20, duration: 350, easing: cubicIn }}
-          >{activities[currentIndex].phrase}</span>
-        {/if}
+        <span
+          style="grid-area: 1/1"
+          in:fly={{ y: 16, duration: 400, easing: cubicOut }}
+          out:fly={{ y: -16, duration: 300, easing: cubicIn }}
+        >
+          {#if activities[currentIndex].url}
+            <a
+              href={activities[currentIndex].url}
+              class="text-inherit no-underline hover:text-accent transition-colors"
+            >{activities[currentIndex].phrase}</a>
+          {:else}
+            {activities[currentIndex].phrase}
+          {/if}
+        </span>
       {/key}
     </span>.
   {/if}
@@ -82,7 +81,7 @@
   .para-fade {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.5s ease, transform 2s ease;
   }
 
   .para-visible {

@@ -3,7 +3,6 @@
   let { isMobile, article } = $props();
 </script>
 
-<!-- to do: import format from D3 to format month date -->
 
 <div class="flex flex-col flex-wrap gap-y-1 my-15 w-full">
   {#if article.img}

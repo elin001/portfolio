@@ -37,8 +37,8 @@
   {#if isMobile}
     Hi! I'm a visual journalist, specializing in news and information design.
   {:else}
-    I like breaking down complex concepts into impactful stories, working
-    creatively across mediums and getting important information to people who
+    I break down complex concepts into impactful stories, working
+    creatively across mediums to get important information to people who
     need it.
   {/if}
 </p>
@@ -51,8 +51,8 @@
   ]}
 >
   {#if isMobile}
-    I like breaking down complex concepts into impactful stories, working
-    creatively across mediums and getting important information to people who
+    I break down complex concepts into impactful stories, working
+    creatively across mediums to get important information to people who
     need it.
   {:else}
     I'm a news designer at The Minnesota Star Tribune during the day. Off the clock, I
